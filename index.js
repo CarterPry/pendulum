@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const pendulum = new Pendulum();
     const canvas = document.getElementById('canvas');
     const context = canvas.getContext('2d');
+    let animationFrameId = null;
 
     let len1 = 2;
     let len2 = 2;
@@ -29,9 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function animate() {
         context.clearRect(0, 0, canvas.width, canvas.height);
+        context.fillStyle = '#1a1a1a'; // Set canvas background color
+        context.fillRect(0, 0, canvas.width, canvas.height);
         drawPendulum();
         pendulum.tick(1 / 60);
-        requestAnimationFrame(animate);
+        animationFrameId = requestAnimationFrame(animate);
     }
 
     function drawPendulum() {
@@ -77,12 +80,17 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('restart-button').addEventListener('click', () => {
         setVars();
         update();
+        cancelAnimationFrame(animationFrameId);
+        animationFrameId = null;
     });
     document.getElementById('pause-button').addEventListener('click', () => {
-        cancelAnimationFrame(animate);
+        cancelAnimationFrame(animationFrameId);
+        animationFrameId = null;
     });
     document.getElementById('play-button').addEventListener('click', () => {
-        requestAnimationFrame(animate);
+        if (!animationFrameId) {
+            animationFrameId = requestAnimationFrame(animate);
+        }
     });
 
     // Initial setup

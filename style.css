@@ -1,6 +1,6 @@
 body {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%); /* Gradient background */
-    color: #e0e0e0; /* Light text */
+    background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
+    color: #e0e0e0;
     font-family: 'Helvetica Neue', Arial, sans-serif;
     display: flex;
     justify-content: center;

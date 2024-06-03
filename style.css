@@ -1,44 +1,164 @@
-body {
+:root {
+    --theme: rgb(29, 30, 32);
+    --entry: rgb(46, 46, 51);
+    --primary: rgb(218, 218, 219);
+    --secondary: rgb(155, 156, 157);
+    --tertiary: rgb(65, 66, 68);
+    --border: rgb(51, 51, 51);
+    --side-color: rgba(53, 53, 58, 0.85);
+    color-scheme: dark;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, button {
+    font-family: -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Oxygen, Ubuntu, Cantarell, open sans, helvetica neue, sans-serif;
+    color: var(--primary);
     background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
-    color: #e0e0e0;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 5rem);
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.common-controls {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--theme);
+    padding: 1rem;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.controls-left, .controls-right {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: var(--theme);
+    overflow-y: auto;
+}
+
+.sim {
+    flex-grow: 1;
+    height: 100%;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    flex-direction: column;
 }
 
-.controls-container {
+.time-controls {
     display: flex;
-    justify-content: space-between;
-    width: 100%;
-    padding: 20px;
-}
-
-.controls {
-    display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 20px;
-    border-radius: 10px;
+    padding: 1rem;
+    background-color: var(--theme);
+    border-top: 1px solid var(--border);
 }
 
-.controls h3 {
-    margin-bottom: 10px;
+button {
+    font-size: 1.5rem;
+    background: var(--entry);
+    border: var(--theme) 4px solid;
+    border-radius: .5rem;
+    padding: .5rem 0.75rem;
+    transition: all ease 100ms;
+    cursor: pointer;
+    height: 4rem;
+    width: 4rem;
+    margin: 0 0.5rem;
+}
+
+button:active {
+    transform: scale(.96);
+}
+
+button:hover {
+    background: var(--tertiary);
+}
+
+.page {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.box {
+    padding: 1rem;
+    margin: 0;
+    border-radius: 1rem;
+    display: inline-flex;
+    flex-direction: column;
+    background-color: var(--side-color);
+    gap: 0.75rem;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
     color: #ffffff; /* White text */
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: normal;
+    text-align: center;
 }
 
-.controls label, .controls input {
-    margin: 5px;
-    color: #e0e0e0; /* Light text */
+.parameter > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.parameter > div > p {
+    color: var(--secondary);
+}
+
+.box p {
+    color: var(--secondary);
+    font-style: italic;
+    text-align: center;
+}
+
+.box > .description p {
+    font-style: normal;
+}
+
+.parameter > input {
+    width: 100%;
+    background-color: pink;
+}
+
+.sim canvas {
+    display: block;
 }
 
 input[type="range"] {
     -webkit-appearance: none;
-    width: 200px;
+    width: 100%;
     height: 8px;
     border-radius: 5px;
     background: #555; /* Slider track */
@@ -63,25 +183,4 @@ input[type="range"]::-moz-range-thumb {
     border-radius: 50%;
     background: #e0e0e0; /* Slider thumb */
     cursor: pointer;
-}
-
-canvas {
-    border: 2px solid #333;
-    background-color: #1a1a1a; /* Match canvas background */
-}
-
-.global-controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.global-controls label {
-    margin: 0 10px;
-    color: #e0e0e0; /* Light text */
-}
-
-.global-controls input {
-    margin: 0 10px;
 }

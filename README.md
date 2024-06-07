@@ -7,55 +7,55 @@ This is a double pendulum which consists of two masses attached end to end. The 
 
 ### Equations of Motion
 The motion equations use Lagrangian mechanics and involve coupled nonlinear differential equations. 
-Let \(\theta_1\) and \(\theta_2\) represent the angles of the first and second pendulums. The angular velocities are \(\omega_1\) and \(\omega_2\), and the angular accelerations are \(\alpha_1\) and \(\alpha_2\).
+Let $\theta_1$ and $\theta_2$ represent the angles of the first and second pendulums. The angular velocities are $\omega_1$ and $\omega_2$, and the angular accelerations are $\alpha_1$ and $\alpha_2$.
 
 The equations of motion for the double pendulums:
-\[ 
+$$
 \alpha_1 = \frac{-g(2m_1 + m_2)\sin(\theta_1) - m_2g\sin(\theta_1 - 2\theta_2) - 2\sin(\theta_1 - \theta_2)m_2(\omega_2^2L_2 + \omega_1^2L_1\cos(\theta_1 - \theta_2))}{L_1(2m_1 + m_2 - m_2\cos(2\theta_1 - 2\theta_2))}
-\]
+$$
 
 and
 
-\[ 
+$$
 \alpha_2 = \frac{2\sin(\theta_1 - \theta_2)(\omega_1^2L_1(m_1 + m_2) + g(m_1 + m_2)\cos(\theta_1) + \omega_2^2L_2m_2\cos(\theta_1 - \theta_2))}{L_2(2m_1 + m_2 - m_2\cos(2\theta_1 - 2\theta_2))}
-\]
+$$
 
 Where:
-- \( g \) is the gravity.
-- \( m_1 \) and \( m_2 \) are the masses of the first and second pendulums.
-- \( L_1 \) and \( L_2 \) are the lengths of the first and second pendulums.
-- \( \theta_1 \) and \( \theta_2 \) are the angles of the first and second pendulums from the vertical.
-- \( \omega_1 \) and \( \omega_2 \) are the angular velocities of the first and second pendulums.
+- $g$ is the gravity.
+- $m_1$ and $m_2$ are the masses of the first and second pendulums.
+- $L_1$ and $L_2$ are the lengths of the first and second pendulums.
+- $\theta_1$ and $\theta_2$ are the angles of the first and second pendulums from the vertical.
+- $\omega_1$ and $\omega_2$ are the angular velocities of the first and second pendulums.
 
-These equations show how the angular accelerations \(\alpha_1\) and \(\alpha_2\) change over time based on the angles, angular velocities, and other parameters.
+These equations show how the angular accelerations $\alpha_1$ and $\alpha_2$ change over time based on the angles, angular velocities, and other parameters.
 
 ### Diameter Representation of Mass
 
-In the pendulum simulation, the size of could be visualized in different ways. Here are the equations used to represent the diameter of the dot.
+In the pendulum simulation, the size of the dot representing each mass can be visualized in various ways. Here are the different equations used to represent the diameter of the dot as a function of its mass:
 
 1. **Direct Correlation**:
-    \[
+    $$
     y = x
-    \]
-   The linear relationship between the mass (x) and the diameter (y), meaning the size of the dot grows in correlation of the mass.
+    $$
+   This represents a direct linear relationship between mass (x) and diameter (y), meaning the size of the dot grows directly proportional to the mass.
 
 2. **Logarithmic Correlation**:
-    \[
+    $$
     y = 20 \log_2(x + 16) - 80
-    \]
-   Uses the logarithmic scale to find the diameter of the dot.
+    $$
+   This equation uses a logarithmic scale to represent the diameter of the dot, which can be useful to visualize a wide range of masses without the dots becoming excessively large.
 
 3. **Area of a Circle**:
-    \[
+    $$
     y = 2\sqrt{\frac{x}{\pi}}
-    \]
-   Relates the diameter of the dot to its mass, assuming the dot represents the area of a circle in a sense.
+    $$
+   This equation relates the diameter of the dot to its mass, assuming the dot represents the area of a circle.
 
 4. **Volume of a Sphere**:
-    \[
+    $$
     y = 2\sqrt[3]{\frac{3x}{4\pi}}
-    \]
-   Where the dot represents the volume of a sphere, this relates its diameter to the mass.
+    $$
+   This equation assumes the dot represents the volume of a sphere, relating its diameter to the mass.
 
 ### Setup
 

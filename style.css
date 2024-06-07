@@ -1,11 +1,11 @@
 :root {
-    --theme: rgb(29, 30, 32);
-    --entry: rgb(46, 46, 51);
+    --theme: transparent;
+    --entry: rgb(218, 218, 219);
     --primary: rgb(218, 218, 219);
     --secondary: rgb(155, 156, 157);
-    --tertiary: rgb(65, 66, 68);
-    --border: rgb(51, 51, 51);
-    --side-color: rgba(53, 53, 58, 0.85);
+    --tertiary: rgb(155, 156, 157);
+    --border: rgb(10, 9, 16);
+    --side-color: rgb(10, 9, 16);
     color-scheme: dark;
 }
 
@@ -18,7 +18,7 @@
 body, button {
     font-family: -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Oxygen, Ubuntu, Cantarell, open sans, helvetica neue, sans-serif;
     color: var(--primary);
-    background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
+    background: rgb(10, 9, 16);
     height: 100vh;
     margin: 0;
     display: flex;
@@ -40,29 +40,20 @@ body, button {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    background-color: var(--theme);
     padding: 1rem;
     border-radius: 10px;
     z-index: 1;
 }
 
-.controls-left, .controls-right {
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1rem;
-    background-color: var(--theme);
-    overflow-y: auto;
-}
-
 .sim {
     flex-grow: 1;
     height: 100%;
+    width: 100%;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: transparent;
 }
 
 .time-controls {
@@ -70,8 +61,11 @@ body, button {
     justify-content: center;
     align-items: center;
     padding: 1rem;
-    background-color: var(--theme);
+    background-color: var(--side-color);
     border-top: 1px solid var(--border);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 button {
@@ -79,12 +73,15 @@ button {
     background: var(--entry);
     border: var(--theme) 4px solid;
     border-radius: .5rem;
-    padding: .5rem 0.75rem;
+    padding: .5rem;
     transition: all ease 100ms;
     cursor: pointer;
     height: 4rem;
     width: 4rem;
     margin: 0 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 button:active {
@@ -95,25 +92,10 @@ button:hover {
     background: var(--tertiary);
 }
 
-.page {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    flex-direction: row;
-}
-
-.box {
-    padding: 1rem;
-    margin: 0;
-    border-radius: 1rem;
-    display: inline-flex;
-    flex-direction: column;
-    background-color: var(--side-color);
-    gap: 0.75rem;
-}
-
-h1 {
-    text-align: center;
+button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 h2 {
@@ -125,35 +107,24 @@ h2 {
     text-align: center;
 }
 
+.parameter > input {
+    width: 100%;
+    background-color: var(--entry); /* Updated to use the entry variable */
+    border: none; /* Ensure no border is present */
+    color: var(--primary); /* Adjust text color if needed */
+}
+
 .parameter > div {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 0.5rem;
     margin-bottom: 0.25rem;
+    background-color: transparent; /* Ensure background is transparent */
 }
 
-.parameter > div > p {
-    color: var(--secondary);
-}
-
-.box p {
-    color: var(--secondary);
-    font-style: italic;
-    text-align: center;
-}
-
-.box > .description p {
-    font-style: normal;
-}
-
-.parameter > input {
-    width: 100%;
-    background-color: pink;
-}
-
-.sim canvas {
-    display: block;
+.parameter {
+    background-color: transparent; /* Ensure background is transparent */
 }
 
 input[type="range"] {
@@ -183,4 +154,43 @@ input[type="range"]::-moz-range-thumb {
     border-radius: 50%;
     background: #e0e0e0; /* Slider thumb */
     cursor: pointer;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+    width: 12px; /* width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: var(--side-color); /* color of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--primary); /* color of the scrollbar handle */
+    border-radius: 10px; /* roundness of the scrollbar handle */
+    border: 3px solid var(--side-color); /* space around the scrollbar handle */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--secondary); /* color of the scrollbar handle on hover */
+}
+
+/* Firefox scrollbar styles */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) var(--side-color);
+}
+
+html::-webkit-scrollbar-track {
+    background: var(--side-color);
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-radius: 10px;
+    border: 3px solid var(--side-color);
+}
+
+html::-webkit-scrollbar-thumb:hover {
+    background-color: var(--secondary);
 }

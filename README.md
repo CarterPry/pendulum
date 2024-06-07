@@ -35,27 +35,35 @@ These equations show how the angular accelerations $\alpha_1$ and $\alpha_2$ cha
 In the pendulum simulation, the size of the dot representing each mass can be visualized in various ways. Here are the different equations used to represent the diameter of the dot as a function of its mass:
 
 1. **Direct Correlation**:
-    $$
+
+   $$
     y = x
-    $$
+   $$
+   
    This represents a direct linear relationship between mass (x) and diameter (y), meaning the size of the dot grows directly proportional to the mass.
 
-2. **Logarithmic Correlation**:
-    $$
+3. **Logarithmic Correlation**:
+
+   $$
     y = 20 \log_2(x + 16) - 80
-    $$
+   $$
+   
    This equation uses a logarithmic scale to represent the diameter of the dot, which can be useful to visualize a wide range of masses without the dots becoming excessively large.
 
-3. **Area of a Circle**:
+5. **Area of a Circle**:
+6. 
     $$
     y = 2\sqrt{\frac{x}{\pi}}
     $$
+   
    This equation relates the diameter of the dot to its mass, assuming the dot represents the area of a circle.
 
-4. **Volume of a Sphere**:
+7. **Volume of a Sphere**:
+8. 
     $$
     y = 2\sqrt[3]{\frac{3x}{4\pi}}
     $$
+   
    This equation assumes the dot represents the volume of a sphere, relating its diameter to the mass.
 
 ### Setup

@@ -36,35 +36,35 @@ In the pendulum simulation, the size of the dot representing each mass can be vi
 
 1. **Direct Correlation**:
 
-   $$
-    y = x
-   $$
+$$
+y = x
+$$
    
-   This represents a direct linear relationship between mass (x) and diameter (y), meaning the size of the dot grows directly proportional to the mass.
+This represents a direct linear relationship between mass (x) and diameter (y), meaning the size of the dot grows directly proportional to the mass.
 
-3. **Logarithmic Correlation**:
+2. **Logarithmic Correlation**:
 
-   $$
-    y = 20 \log_2(x + 16) - 80
-   $$
+$$
+y = 20 \log_2(x + 16) - 80
+$$
    
-   This equation uses a logarithmic scale to represent the diameter of the dot, which can be useful to visualize a wide range of masses without the dots becoming excessively large.
+This equation uses a logarithmic scale to represent the diameter of the dot, which can be useful to visualize a wide range of masses without the dots becoming excessively large.
 
-5. **Area of a Circle**:
-6. 
-    $$
-    y = 2\sqrt{\frac{x}{\pi}}
-    $$
+3. **Area of a Circle**:
+ 
+$$
+y = 2\sqrt{\frac{x}{\pi}}
+$$
    
-   This equation relates the diameter of the dot to its mass, assuming the dot represents the area of a circle.
+This equation relates the diameter of the dot to its mass, assuming the dot represents the area of a circle.
 
-7. **Volume of a Sphere**:
-8. 
-    $$
-    y = 2\sqrt[3]{\frac{3x}{4\pi}}
-    $$
+4. **Volume of a Sphere**:
+ 
+$$
+y = 2\sqrt[3]{\frac{3x}{4\pi}}
+$$
    
-   This equation assumes the dot represents the volume of a sphere, relating its diameter to the mass.
+This equation assumes the dot represents the volume of a sphere, relating its diameter to the mass.
 
 ### Setup
 

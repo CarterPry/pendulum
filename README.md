@@ -10,6 +10,7 @@ The motion equations use Lagrangian mechanics and involve coupled nonlinear diff
 Let $\theta_1$ and $\theta_2$ represent the angles of the first and second pendulums. The angular velocities are $\omega_1$ and $\omega_2$, and the angular accelerations are $\alpha_1$ and $\alpha_2$.
 
 The equations of motion for the double pendulums:
+
 $$
 \alpha_1 = \frac{-g(2m_1 + m_2)\sin(\theta_1) - m_2g\sin(\theta_1 - 2\theta_2) - 2\sin(\theta_1 - \theta_2)m_2(\omega_2^2L_2 + \omega_1^2L_1\cos(\theta_1 - \theta_2))}{L_1(2m_1 + m_2 - m_2\cos(2\theta_1 - 2\theta_2))}
 $$
